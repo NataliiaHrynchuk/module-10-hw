@@ -1,0 +1,2 @@
+const e=({name:e})=>axios.get(`https://restcountries.com/v3.1/name/${e}`),t={input:document.querySelector("#search-box"),countryList:document.querySelector(".country-list"),countryInfo:document.querySelector(".country-info")};let n="";t.input.addEventListener("input",(t=>{const{value:o}=t.target;t.preventDefault(),o&&(console.log(o),n=o,e({name:n}).then((()=>console.log())))}));
+//# sourceMappingURL=index.8c7a6eee.js.map
