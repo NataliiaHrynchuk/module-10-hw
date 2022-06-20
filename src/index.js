@@ -1,6 +1,7 @@
 import './css/styles.css';
 import { fetchCountries } from './fetchCountries';
 
+
 const DEBOUNCE_DELAY = 300;
 const refs = {
     input: document.querySelector('#search-box'),
@@ -13,9 +14,10 @@ const onSearch = (event) => {
     event.preventDefault();
     
     if (!value) return;
-    console.log(value);
-    name = value;
-    fetchCountries({ name }).then(() => console.log());
+    // console.log(value);
+    name = value.trim();
+    // console.log(name);
+    fetchCountries({ name });
         
     
 }
@@ -24,4 +26,4 @@ const render = (name) => {
     //render new list here
     console.log(name);
 };
-refs.input.addEventListener('input', onSearch);
+refs.input.addEventListener('input', _.debounce(onSearch, DEBOUNCE_DELAY));
