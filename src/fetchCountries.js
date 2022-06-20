@@ -1,4 +1,5 @@
 const BASE_URL = 'https://restcountries.com/v3.1/name/'; 
+import Notiflix from 'notiflix';
 export const fetchCountries = ({ name }) => {
     console.log(name);
     
@@ -9,7 +10,6 @@ export const fetchCountries = ({ name }) => {
         .then( countries  => {
             console.log(countries);   
             return countries;
-           
         })
         .catch(error => {
             console.log(error);
